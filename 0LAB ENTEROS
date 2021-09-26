@@ -1,0 +1,95 @@
+#include <stdio.h>
+
+
+//MIRAR int argc,char*,argu[]
+//https://ccia.ugr.es/~jfv/ed1/c/cdrom/cap6/cap64.htm
+//MIRAR funció usage, comandes: write() i read()
+//Entregar algoritme + codi del lab0 amb un pdf abans de lab1
+//Pensar que si tiene coma=incorrecto.
+//Cadenas de texto en arrays http://platea.pntic.mec.es/vgonzale/cyr_0204/cyr_01/control/lengua_C/cadenas.htm
+//https://iq.opengenus.org/gets-vs-fgets-in-c/#:~:text=gets()%20and%20fgets(),is%20solved%20using%20fgets().
+
+int main(){
+    char caracter[100];
+    scanf("%s",caracter);
+    int a=0;
+    int n=0;
+    int comoEntero = caracter[n] - '0';   
+    int resp=0;
+    if(comoEntero==-38){
+        printf("Introduzca un carácter porfavor\n");
+
+
+
+
+    }
+    else{
+        while(a==0 ){
+            printf("%d\n",n);
+            if((!(comoEntero>=0 && comoEntero<=9))){
+                //printf("El carácter no lo es \n");
+                if(comoEntero==-48){
+                    a=1;
+                    printf("%d aaaaaaa \n",n);
+                    printf("El carácter '%c' es %d en entero\n", caracter[n], comoEntero);
+                    resp=1;
+                    
+                }
+                else{
+                    printf("El carácter '%c' es %d en entero\n", caracter[n], comoEntero);
+                    a=1;
+                }
+                
+            }
+            
+            ++n;
+            comoEntero = caracter[n] - '0';
+
+        }
+        if(resp==0){
+            printf("El carácter no es entero\n");
+
+        }
+        else if(resp==1){
+            printf("El carácter es entero\n");
+
+        }
+    }
+    
+    //printf("El carácter '%c' es %d en entero\n", caracter[0], comoEntero);
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    /*
+    char A,B;
+
+    printf("Introduzca el primer número : ");//ficar dades al final
+    scanf("%s/n",A);
+    printf("(%s/n",A);
+    char numA[]=A;
+    printf("Introduzca el segundo número : ");
+    scanf("%s/n",B);
+    char numB[]=B;
+    printf("numA mide %ld bytes \n",sizeof(numA));
+    printf("numB mide %ld bytes \n",sizeof(numB));
+
+*/
+    
+ 
+ 
+ 
+ 
+}
