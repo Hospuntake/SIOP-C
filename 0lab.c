@@ -81,19 +81,23 @@ int main(){
 
         }
         int correcte=0;
+          
         while(correcte==0){
             printf("¿Vol continuar inserint numeros?\n");
             printf("Escrigui 1 per continuar\nEscrigui 2 per acabar \n\n->");
-            int aa;
-            scanf("%d",&a);
-            if(a==1){
+            char a[100];
+            scanf("%s",a);
+            int comoEntero4 = a[0] - '0'; 
+            if(comoEntero4=='1'&& a[1]=='\0'){
                 correcte=1;
             }
-            else if(a==2){
+            else if(a[0]=='2'&& a[1]=='\0'){
                 fi=1;
                 correcte=1;
             }
             else {
+                printf("Numero incorrecte\n");
+                
             }
         }
     }
