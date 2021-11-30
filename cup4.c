@@ -1,4 +1,3 @@
-
 //G_KEY=0xdc0df       :)))))))))))))))))))))))))))))))))
 //Comentari: Tarda una mica avegades , pero sempre acaba compilant .
 #define TEAMNAME "JoaquimHervas" // insert between "" your team name
@@ -40,9 +39,9 @@ int comprova_int(char caracter2[]){
         }
         else fi=1;              
     }
-    
+        
     if(fi==1){
-        write(1,"(-1)El nombre no és enter mes gran que 0! \n",44);
+        write(1,"(-1)El nombre no és un natural mes gran que 0! \n",49);
         return 0;
     }
     else{
@@ -51,67 +50,56 @@ int comprova_int(char caracter2[]){
 }
 
 int main(){
-    
 
-    //TT
     printf("Indiqui el nombre de replicants\n->");
     char caracter2[100];
     scanf("%s",caracter2);
     int r=comprova_int(caracter2);
+    int Nombre_Replicants;
     if(r==1){
-        
+        Nombre_Replicants = atoi(caracter2);
+        if(Nombre_Replicants<=0){
+            write(1,"(-1)El primer nombre no és mes gran que 0! \n",44);
+            exit(-1);
+        } 
     }
-    else exit(0);
-    char *ptr;
-    int Nombre_Replicants = atoi(caracter2);
+    else exit(-1);
+
+    
 
     printf("Indiqui la memoria del replicant en Bytes\n->");
     char caracter[100];
     scanf("%s",caracter);
     r=comprova_int(caracter);
-    if(r==1){}
-    else exit(0);
 
-    char *ptr1;
-    int Memoria ;
+    if(r==1){
+        int pr = atoi(caracter);
+        if(pr<=0){
+            write(1,"(-1)El segón nombre no és mes gran que 0! \n",44); 
+            exit(-1);
+        }
+    }
+    else exit(-1);
 
-    //mirem que el canal d'Entrada cap el capitol sigui correcte    
-    int suma=0;
-    int id;
-    
-    
-    
-    int pidr;
-    int pid;
-    //entra el TT    
-    int i=0;
-    int fi=0;
     int ctrlfd=ctrlconnect(SERVADDR,CRTLPORT,ENIGMA3, TEAMNAME, SILVERKEY, GOLDKEY); //retorna el file descriptor del canal de control i verifica l'enigma i la clau
     int fd = connecta(SERVADDR,SERVPORT); //retorna el file descriptor del canal de dades
-  
+    int fi=0;int i=0;int id;int suma=0;int pid;
     while(i<Nombre_Replicants && fi==0){
         pid=fork();
         ++i;
         if(pid==0){      
             fi=1;
             close(ctrlfd);
-            dup2(fd,0);
-            close(fd);
+            dup2(fd,0);close(fd);
             
-            execlp("./replicant","replicant",caracter,NULL );
-                
-        }
+            execlp("./4replicant","4replicant",caracter,NULL );//INSERIR NOMBRE DEL ARCHIVO!!!!!!!!!!!!!!!!!!!!!!!!
+        }//############################################################
         else{
             wait(&id);
             printf("Exit Status= %d \n",WEXITSTATUS(id));
             suma=suma+WEXITSTATUS(id);
-
         }
-
-
     }
-
-    
     
     /*******reading answer from Capitol **************/
     char buffer[suma],buffy[256];
@@ -120,8 +108,5 @@ int main(){
     int len=read(ctrlfd,buffy,128);
     buffy[len]='\0';
     printf("MISSION: %s\n",buffy);
-        close(ctrlfd);
-
-    
-    
+    close(ctrlfd); 
 }
