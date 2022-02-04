@@ -1,15 +1,5 @@
 //G_KEY=0xdc0df       :)))))))))))))))))))))))))))))))))
 //Comentari: Tarda una mica avegades , pero sempre acaba compilant .
-#define TEAMNAME "JoaquimHervas" // insert between "" your team name
-#define ENIGMA2 "SIGSTOP" // insert between "" solution of enigna 2
-#define BRONCEKEY "7a65f" // insert BRONCEKEY between ""
-#define SERVNAME "SIOP-server"
-#define SERVADDR "147.83.159.200"
-#define SERVPORT 9999
-#define CRTLPORT 9900
-#define ENIGMA3 "07F4"// replace simbol @ with solution of enigna 3
-#define SILVERKEY "ab39f"  // insert SILVERKEY between ""
-#define GOLDKEY "" // use only for SIOP Challenge : insert GOLDKEY between ""
 
 #include <stdio.h>
 #include <stdlib.h>
