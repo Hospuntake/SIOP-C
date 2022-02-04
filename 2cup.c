@@ -1,6 +1,4 @@
-#define TEAMNAME "JoaquimHervas"
-#define ENIGMA1 "FFEE"
-//KEY=7a65f :)))))))))))))))))))))))))))))))))
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
