@@ -1,9 +1,6 @@
 
 //S_KEY=ab39f       :)))))))))))))))))))))))))))))))))
-//Comentari: Tarda una mica avegades , pero sempre acaba compilant .
-#define TEAMNAME "JoaquimHervas" // insert between "" your team name
-#define ENIGMA2 "SIGSTOP" // insert between "" solution of enigna 2
-#define BRONCEKEY "7a65f" // insert BRONCEKEY between ""
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
